@@ -1,7 +1,7 @@
 package com.xxl.job.executorbiz;
 
 import com.xxl.job.core.biz.ExecutorBiz;
-import com.xxl.job.core.biz.client.ExecutorBizClient;
+import com.xxl.job.core.biz.client.ExecutorBizClient4Admin;
 import com.xxl.job.core.biz.model.*;
 import com.xxl.job.core.enums.ExecutorBlockStrategyEnum;
 import com.xxl.job.core.glue.GlueTypeEnum;
@@ -21,7 +21,7 @@ public class ExecutorBizTest {
 
     @Test
     public void beat() throws Exception {
-        ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
+        ExecutorBiz executorBiz = new ExecutorBizClient4Admin(addressUrl, accessToken);
         // Act
         final ReturnT<String> retval = executorBiz.beat();
 
@@ -34,7 +34,7 @@ public class ExecutorBizTest {
 
     @Test
     public void idleBeat() {
-        ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
+        ExecutorBiz executorBiz = new ExecutorBizClient4Admin(addressUrl, accessToken);
 
         final int jobId = 0;
 
@@ -50,7 +50,7 @@ public class ExecutorBizTest {
 
     @Test
     public void run() {
-        ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
+        ExecutorBiz executorBiz = new ExecutorBizClient4Admin(addressUrl, accessToken);
 
         // trigger data
         final TriggerParam triggerParam = new TriggerParam();
@@ -73,7 +73,7 @@ public class ExecutorBizTest {
 
     @Test
     public void kill() {
-        ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
+        ExecutorBiz executorBiz = new ExecutorBizClient4Admin(addressUrl, accessToken);
 
         final int jobId = 0;
 
@@ -89,7 +89,7 @@ public class ExecutorBizTest {
 
     @Test
     public void log() {
-        ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
+        ExecutorBiz executorBiz = new ExecutorBizClient4Admin(addressUrl, accessToken);
 
         final long logDateTim = 0L;
         final long logId = 0;

@@ -17,8 +17,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 
 /** Created by xuxueli on 17/3/1. */
-public class ExecutorBizImpl implements ExecutorBiz {
-    private static Logger logger = LoggerFactory.getLogger(ExecutorBizImpl.class);
+public class ExecutorBizImpl4Core implements ExecutorBiz {
+    private static Logger logger = LoggerFactory.getLogger(ExecutorBizImpl4Core.class);
 
     @Override
     public ReturnT<String> beat() {

@@ -9,15 +9,15 @@ import com.xxl.job.core.util.XxlJobRemotingUtil;
  *
  * @author xuxueli 2017-07-28 22:14:52
  */
-public class ExecutorBizClient implements ExecutorBiz {
+public class ExecutorBizClient4Admin implements ExecutorBiz {
 
     private String addressUrl;
     private String accessToken;
     private int timeout = 3;
 
-    public ExecutorBizClient() {}
+    public ExecutorBizClient4Admin() {}
 
-    public ExecutorBizClient(String addressUrl, String accessToken) {
+    public ExecutorBizClient4Admin(String addressUrl, String accessToken) {
         this.addressUrl = addressUrl;
         this.accessToken = accessToken;
 

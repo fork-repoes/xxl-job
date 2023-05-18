@@ -67,16 +67,12 @@ public class JobTriggerPoolHelper {
                         XxlJobAdminConfig.getAdminConfig().getTriggerPoolFastMax(),
                         60L,
                         TimeUnit.SECONDS,
-                        new LinkedBlockingQueue<Runnable>(1000),
-                        new ThreadFactory() {
-                            @Override
-                            public Thread newThread(Runnable r) {
-                                return new Thread(
+                        new LinkedBlockingQueue<>(1000),
+                        r ->
+                                new Thread(
                                         r,
                                         "xxl-job, admin JobTriggerPoolHelper-fastTriggerPool-"
-                                                + r.hashCode());
-                            }
-                        });
+                                                + r.hashCode()));
 
         slowTriggerPool =
                 new ThreadPoolExecutor(

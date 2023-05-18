@@ -49,7 +49,9 @@ public class JobScheduleHelper {
 
     public void start() {
 
-        // schedule thread
+        // 线程 scheduleThread 运行中不断的从任务表中查询 查询近 5000
+        // 毫秒(5秒)中要执行的任务，如果当前时间大于任务接下来要执行的时间则立即执行，
+        // 否则将任务执行时间除以 1000 变为秒之后再与 60 求余添加到时间轮中。
         scheduleThread =
                 new Thread(
                         new Runnable() {
@@ -66,8 +68,8 @@ public class JobScheduleHelper {
                                 }
                                 logger.info(">>>>>>>>> init xxl-job admin scheduler success.");
 
-                                // pre-read count: treadpool-size * trigger-qps (each trigger cost
-                                // 50ms, qps = 1000/50 = 20)
+                                // pre-read count: treadpool-size * trigger-qps
+                                // trigger-qps: each trigger cost 50ms, qps = 1000/50 = 20
                                 int preReadCount =
                                         (XxlJobAdminConfig.getAdminConfig().getTriggerPoolFastMax()
                                                         + XxlJobAdminConfig.getAdminConfig()
@@ -293,7 +295,8 @@ public class JobScheduleHelper {
         scheduleThread.setName("xxl-job, admin JobScheduleHelper#scheduleThread");
         scheduleThread.start();
 
-        // ring thread
+        // 时间轮实现方式比较简单，就是一个 Map 结构数据，key值0-60，value是任务ID列表 Map<Integer, List> ringData
+        // ringThread 运行中不断根据当前时间求余从 时间轮 ringData 中获取任务列表，取出任务之后执行任务
         ringThread =
                 new Thread(
                         new Runnable() {

@@ -1,7 +1,7 @@
 package com.xxl.job.core.server;
 
 import com.xxl.job.core.biz.ExecutorBiz;
-import com.xxl.job.core.biz.impl.ExecutorBizImpl;
+import com.xxl.job.core.biz.impl.ExecutorBizImpl4Core;
 import com.xxl.job.core.biz.model.*;
 import com.xxl.job.core.thread.ExecutorRegistryThread;
 import com.xxl.job.core.util.GsonTool;
@@ -35,7 +35,7 @@ public class EmbedServer {
 
     public void start(
             final String address, final int port, final String appname, final String accessToken) {
-        executorBiz = new ExecutorBizImpl();
+        executorBiz = new ExecutorBizImpl4Core();
         thread =
                 new Thread(
                         new Runnable() {
