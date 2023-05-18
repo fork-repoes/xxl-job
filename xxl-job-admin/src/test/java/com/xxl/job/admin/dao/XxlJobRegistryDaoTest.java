@@ -12,11 +12,10 @@ import java.util.List;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class XxlJobRegistryDaoTest {
 
-    @Resource
-    private XxlJobRegistryDao xxlJobRegistryDao;
+    @Resource private XxlJobRegistryDao xxlJobRegistryDao;
 
     @Test
-    public void test(){
+    public void test() {
         int ret = xxlJobRegistryDao.registryUpdate("g1", "k1", "v1", new Date());
         if (ret < 1) {
             ret = xxlJobRegistryDao.registrySave("g1", "k1", "v1", new Date());
@@ -26,5 +25,4 @@ public class XxlJobRegistryDaoTest {
 
         int ret2 = xxlJobRegistryDao.removeDead(Arrays.asList(1));
     }
-
 }

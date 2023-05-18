@@ -66,5 +66,4 @@ public class NetUtil {
         }
         return used;
     }
-
 }

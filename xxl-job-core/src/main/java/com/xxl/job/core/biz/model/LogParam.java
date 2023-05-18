@@ -7,18 +7,17 @@ import java.io.Serializable;
  */
 public class LogParam implements Serializable {
     private static final long serialVersionUID = 42L;
+    private long logDateTim;
+    private long logId;
+    private int fromLineNum;
 
-    public LogParam() {
-    }
+    public LogParam() {}
+
     public LogParam(long logDateTim, long logId, int fromLineNum) {
         this.logDateTim = logDateTim;
         this.logId = logId;
         this.fromLineNum = fromLineNum;
     }
-
-    private long logDateTim;
-    private long logId;
-    private int fromLineNum;
 
     public long getLogDateTim() {
         return logDateTim;
@@ -43,5 +42,4 @@ public class LogParam implements Serializable {
     public void setFromLineNum(int fromLineNum) {
         this.fromLineNum = fromLineNum;
     }
-
 }

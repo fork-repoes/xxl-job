@@ -7,9 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-/**
- * Created by xuxueli on 17/3/10.
- */
+/** Created by xuxueli on 17/3/10. */
 public abstract class ExecutorRouter {
     protected static Logger logger = LoggerFactory.getLogger(ExecutorRouter.class);
 
@@ -17,8 +15,7 @@ public abstract class ExecutorRouter {
      * route address
      *
      * @param addressList
-     * @return  ReturnT.content=address
+     * @return ReturnT.content=address
      */
     public abstract ReturnT<String> route(TriggerParam triggerParam, List<String> addressList);
-
 }

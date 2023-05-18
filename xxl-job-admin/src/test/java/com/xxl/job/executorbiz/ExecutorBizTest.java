@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 /**
  * executor api test
  *
- * Created by xuxueli on 17/5/12.
+ * <p>Created by xuxueli on 17/5/12.
  */
 public class ExecutorBizTest {
 
@@ -33,7 +33,7 @@ public class ExecutorBizTest {
     }
 
     @Test
-    public void idleBeat(){
+    public void idleBeat() {
         ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
 
         final int jobId = 0;
@@ -49,7 +49,7 @@ public class ExecutorBizTest {
     }
 
     @Test
-    public void run(){
+    public void run() {
         ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
 
         // trigger data
@@ -72,7 +72,7 @@ public class ExecutorBizTest {
     }
 
     @Test
-    public void kill(){
+    public void kill() {
         ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
 
         final int jobId = 0;
@@ -88,7 +88,7 @@ public class ExecutorBizTest {
     }
 
     @Test
-    public void log(){
+    public void log() {
         ExecutorBiz executorBiz = new ExecutorBizClient(addressUrl, accessToken);
 
         final long logDateTim = 0L;
@@ -96,10 +96,10 @@ public class ExecutorBizTest {
         final int fromLineNum = 0;
 
         // Act
-        final ReturnT<LogResult> retval = executorBiz.log(new LogParam(logDateTim, logId, fromLineNum));
+        final ReturnT<LogResult> retval =
+                executorBiz.log(new LogParam(logDateTim, logId, fromLineNum));
 
         // Assert result
         Assertions.assertNotNull(retval);
     }
-
 }

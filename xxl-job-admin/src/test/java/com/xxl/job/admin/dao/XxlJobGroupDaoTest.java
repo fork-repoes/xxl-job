@@ -11,11 +11,10 @@ import java.util.List;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class XxlJobGroupDaoTest {
 
-    @Resource
-    private XxlJobGroupDao xxlJobGroupDao;
+    @Resource private XxlJobGroupDao xxlJobGroupDao;
 
     @Test
-    public void test(){
+    public void test() {
         List<XxlJobGroup> list = xxlJobGroupDao.findAll();
 
         List<XxlJobGroup> list2 = xxlJobGroupDao.findByAddressType(0);
@@ -40,5 +39,4 @@ public class XxlJobGroupDaoTest {
 
         int ret3 = xxlJobGroupDao.remove(group.getId());
     }
-
 }

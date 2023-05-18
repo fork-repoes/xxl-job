@@ -12,29 +12,28 @@ public class JacksonUtilTest {
 
     @Test
     public void shouldWriteValueAsString() {
-        //given
+        // given
         Map<String, String> map = new HashMap<>();
         map.put("aaa", "111");
         map.put("bbb", "222");
 
-        //when
+        // when
         String json = writeValueAsString(map);
 
-        //then
+        // then
         assertEquals(json, "{\"aaa\":\"111\",\"bbb\":\"222\"}");
     }
 
     @Test
     public void shouldReadValueAsObject() {
-        //given
+        // given
         String jsonString = "{\"aaa\":\"111\",\"bbb\":\"222\"}";
 
-        //when
+        // when
         Map result = JacksonUtil.readValue(jsonString, Map.class);
 
-        //then
+        // then
         assertEquals(result.get("aaa"), "111");
-        assertEquals(result.get("bbb"),"222");
-
+        assertEquals(result.get("bbb"), "222");
     }
 }

@@ -11,7 +11,6 @@ import java.util.List;
  */
 public interface AdminBiz {
 
-
     // ---------------------- callback ----------------------
 
     /**
@@ -21,7 +20,6 @@ public interface AdminBiz {
      * @return
      */
     public ReturnT<String> callback(List<HandleCallbackParam> callbackParamList);
-
 
     // ---------------------- registry ----------------------
 
@@ -40,7 +38,6 @@ public interface AdminBiz {
      * @return
      */
     public ReturnT<String> registryRemove(RegistryParam registryParam);
-
 
     // ---------------------- biz (custome) ----------------------
     // group、job ... manage

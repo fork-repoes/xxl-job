@@ -32,7 +32,5 @@ public class FramelessApplication {
             // destroy
             FrameLessXxlJobConfig.getInstance().destroyXxlJobExecutor();
         }
-
     }
-
 }
